@@ -1,0 +1,12 @@
+{% extends 'store/Main.html' %}     <!-- Dedičnosť z Main.html -->
+{% load static %}   <!-- Načítanie "static" priečinku(css, obrázky, js) -->
+{% block content %}
+<div class="content-section">
+    <h2>Boli ste odhlásený</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Prihlásiť sa</a>
+        </small>
+    </div>
+</div>
+{% endblock content %}

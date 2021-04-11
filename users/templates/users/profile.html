@@ -1,0 +1,5 @@
+{% extends 'store/Main.html' %}     <!-- Dedičnosť z Main.html -->
+{% load static %}   <!-- Načítanie "static" priečinku(css, obrázky, js) -->
+{% block content %}
+    <h1>{{ user.username }}</h1>
+{% endblock content %}
