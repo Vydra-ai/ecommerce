@@ -101,7 +101,7 @@ def processOrder(request):
         print('User is not logged in')
     return JsonResponse('Payment complete', safe=False)
 
-def view(request):
+def view(request, id):
     if request.user.is_authenticated:
         customer = request.user.customer
         order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -112,6 +112,6 @@ def view(request):
         order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': True}
         cartItems = order['get_cart_items']
 
-    products = Product.objects.all()
-    context = {'products': products, 'cartItems': cartItems}
+    products = Product.objects.get(id=id)
+    context = {'product': products, 'cartItems': cartItems}
     return render(request, 'store/View.html', context)

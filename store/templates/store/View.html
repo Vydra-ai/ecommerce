@@ -1,42 +1,22 @@
 {% extends 'store/Main.html' %}
 {% load static %}
 {% block content %}
-<main class="row">
-	 <div class="row">
-        {% for product in products %}
-        <div class="col-lg-6">      <!-- Produkty -->
-            <img class="thumbnail" src="{{product.imageURL}}">
-            <div class="box-element product">
+</br>
+</br>
+</br>
+</br>
+
+<div class="middle">
+
+        <img class="thumbnail" src="{{product.imageURL}}">
+        <div class="box-element product">
                 <h6><strong>{{product.name}}</strong></h6>
                 <hr>
                 <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Pridať do košíka</button>
                 <h4 style="display: inline-block;float: right">{{product.price|floatformat:2}}€</h4>
-            </div>
+                <hr>
+                <h6>{{ product.detail }}</h6>
         </div>
-        {% endfor %}
-    </div>
-	<hr />
-	<div class="row">
-		<div class="col-md-6">
-					<!-- Detail -->
-					<blockquote class="blockquote text-right">
-					  <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</small>
-					  	<cite title="Source Title">
-					  		<i class="fa fa-star text-warning"></i>
-					  		<i class="fa fa-star text-warning"></i>
-					  		<i class="fa fa-star text-warning"></i>
-					  		<i class="fa fa-star text-warning"></i>
-					  	</cite>
-					  </footer>
-					</blockquote>
-					<hr />
-				</div>
-			</div>
-		</div>
-	</div>
-</main>
-<script src="https://cdn.jsdelivr.net/gh/igorlino/elevatezoom-plus@1.2.3/src/jquery.ez-plus.js"></script>
-<script>
-    $('#zoom_01').ezPlus();
-</script>
-{% endblock %}
+</div>
+
+{% endblock content %}
